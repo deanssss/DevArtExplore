@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="xyz.dean.practice.devartexplore">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DevArtExplore"
+        tools:ignore="AllowBackup">
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ipc.IPCActivity" />
+        <activity android:name=".ipc.BinderPoolActivity" />
+
+        <service
+            android:name=".ipc.BundleIPCService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.bundle_remote" />
+        <service
+            android:name=".ipc.FileIPCService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.file_remote" />
+        <service
+            android:name=".ipc.MessengerIPCService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.messenger" />
+        <service
+            android:name=".ipc.AidlIPCService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.aidl" />
+        <service
+            android:name=".ipc.SocketServerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.socket" />
+        <service
+            android:name=".ipc.binderpool.server.BinderPoolService"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.binderpool">
+            <intent-filter>
+                <action android:name="xyz.dean.practice.devartexplore.binderpool" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name=".ipc.UserDataProvider"
+            android:authorities="xyz.dean.practice.devartexplore.ipc.provider"
+            android:enabled="true"
+            android:exported="false"
+            android:process="xyz.dean.practice.devartexplore.ipc.provider" />
+    </application>
+
+</manifest>
