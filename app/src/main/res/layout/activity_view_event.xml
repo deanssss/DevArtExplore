@@ -5,18 +5,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
-
+    tools:context=".viewevent.ViewEventActivity">
     <Button
-        android:id="@+id/ipc_bt"
-        android:text="IPC"
+        android:id="@+id/view_scroll_bt"
+        android:text="ViewScroll"
+        android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
-
     <Button
-        android:id="@+id/view_event_bt"
-        android:text="ViewEvent"
+        android:id="@+id/nested_cross_scroll_outer_intercept_bt"
+        android:text="NestedCrossScroll (Outer Intercept)"
+        android:textAllCaps="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="HardcodedText" />
+    <Button
+        android:id="@+id/nested_cross_scroll_inner_intercept_bt"
+        android:text="NestedCrossScroll (Inner Intercept)"
         android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

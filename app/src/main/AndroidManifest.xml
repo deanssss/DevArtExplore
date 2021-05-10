@@ -13,7 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DevArtExplore"
         tools:ignore="AllowBackup">
-
+        <activity android:name=".viewevent.NestedCrossScrollActivityInnerIntercept"></activity>
+        <activity android:name=".viewevent.NestedCrossScrollActivityOuterIntercept" />
+        <activity android:name=".viewevent.ViewEventActivity" />
+        <activity android:name=".viewevent.ViewScrollActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
