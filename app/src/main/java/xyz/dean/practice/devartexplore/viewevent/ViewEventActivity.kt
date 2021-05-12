@@ -21,6 +21,9 @@ class ViewEventActivity : AppCompatActivity() {
         findViewById<Button>(R.id.nested_cross_scroll_inner_intercept_bt).setOnClickListener {
             startActivity(NestedCrossScrollActivityInnerIntercept.createIntent(this))
         }
+        findViewById<Button>(R.id.nested_parallel_scroll_bt).setOnClickListener {
+            startActivity(NestedParallelScrollActivity.createIntent(this))
+        }
     }
 
     companion object {
