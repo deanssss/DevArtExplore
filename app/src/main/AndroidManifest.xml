@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DevArtExplore"
         tools:ignore="AllowBackup">
-        <activity android:name=".viewevent.NestedParallelScrollActivity"></activity>
+        <activity android:name=".ipc.cbinder.CServiceDemoActivity" />
+        <activity android:name=".viewevent.NestedParallelScrollActivity" />
         <activity android:name=".viewevent.NestedCrossScrollActivityInnerIntercept" />
         <activity android:name=".viewevent.NestedCrossScrollActivityOuterIntercept" />
         <activity android:name=".viewevent.ViewEventActivity" />
@@ -62,6 +63,11 @@
                 <action android:name="xyz.dean.practice.devartexplore.binderpool" />
             </intent-filter>
         </service>
+        <service
+            android:name=".ipc.cbinder.CServiceDemoService"
+            android:process=":cservice"
+            android:enabled="true"
+            android:exported="false" />
 
         <provider
             android:name=".ipc.UserDataProvider"

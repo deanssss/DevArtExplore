@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import xyz.dean.practice.devartexplore.R
+import xyz.dean.practice.devartexplore.ipc.cbinder.CServiceDemoActivity
 import xyz.dean.practice.devartexplore.util.printWriter
 import xyz.dean.practice.devartexplore.util.toast
 import java.io.BufferedReader
@@ -173,6 +174,10 @@ class IPCActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.binder_pool_bt).setOnClickListener {
             startActivity(BinderPoolActivity.createIntent(this))
+        }
+
+        findViewById<Button>(R.id.custom_bt).setOnClickListener {
+            startActivity(CServiceDemoActivity.createIntent(this))
         }
     }
 
