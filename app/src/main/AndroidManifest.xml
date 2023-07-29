@@ -1,33 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="xyz.dean.practice.devartexplore">
+    package="xyz.dean.practice.devartexplore" >
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MainApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DevArtExplore"
-        tools:ignore="AllowBackup">
-        <activity android:name=".ipc.cbinder.CServiceDemoActivity" />
-        <activity android:name=".viewevent.NestedParallelScrollActivity" />
-        <activity android:name=".viewevent.NestedCrossScrollActivityInnerIntercept" />
-        <activity android:name=".viewevent.NestedCrossScrollActivityOuterIntercept" />
-        <activity android:name=".viewevent.ViewEventActivity" />
-        <activity android:name=".viewevent.ViewScrollActivity" />
-        <activity android:name=".MainActivity">
+        tools:ignore="AllowBackup" >
+        <activity
+            android:name=".ipc.cbinder.CServiceDemoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewevent.NestedParallelScrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewevent.NestedCrossScrollActivityInnerIntercept"
+            android:exported="false" />
+        <activity
+            android:name=".viewevent.NestedCrossScrollActivityOuterIntercept"
+            android:exported="false" />
+        <activity
+            android:name=".viewevent.ViewEventActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewevent.ViewScrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ipc.IPCActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ipc.BinderPoolActivity"
+            android:exported="false" />
+        <activity
+            android:name=".component.activity.LauncherActivity"
+            android:exported="false" />
+        <activity
+            android:name=".component.activity.StandardActivity"
+            android:process=":other"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ipc.IPCActivity" />
-        <activity android:name=".ipc.BinderPoolActivity" />
 
         <service
             android:name=".ipc.BundleIPCService"
@@ -58,16 +83,16 @@
             android:name=".ipc.binderpool.server.BinderPoolService"
             android:enabled="true"
             android:exported="false"
-            android:process="xyz.dean.practice.devartexplore.ipc.binderpool">
+            android:process="xyz.dean.practice.devartexplore.ipc.binderpool" >
             <intent-filter>
                 <action android:name="xyz.dean.practice.devartexplore.binderpool" />
             </intent-filter>
         </service>
         <service
             android:name=".ipc.cbinder.CServiceDemoService"
-            android:process=":cservice"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false"
+            android:process=":cservice" />
 
         <provider
             android:name=".ipc.UserDataProvider"

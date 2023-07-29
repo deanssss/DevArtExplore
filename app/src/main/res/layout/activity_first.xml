@@ -1,30 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".MainActivity">
+    tools:context=".component.activity.LauncherActivity">
 
     <Button
-        android:id="@+id/launch_mode_bt"
-        android:text="LaunchMode"
+        android:id="@+id/launch_standard"
+        android:text="Standard"
         android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/ipc_bt"
-        android:text="IPC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/view_event_bt"
-        android:text="ViewEvent"
+        android:id="@+id/launch_implicit"
+        android:text="Implicit"
         android:textAllCaps="false"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
